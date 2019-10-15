@@ -9,6 +9,7 @@ namespace UniversalMemo.Views
     // by visiting https://aka.ms/xamarinforms-previewer
 
     [DesignTimeVisible(false)]
+
     public partial class NewFolderPage : ContentPage
     {
         public Folder Folder { get; set; }

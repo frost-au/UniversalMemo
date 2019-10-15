@@ -18,13 +18,18 @@ namespace UniversalMemo.Views
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
+        async void AddFolder_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new NewFolderPage()));
+        }
+
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as FoladerViewModelMasterMenuItem;
             if (item == null)
                 return;
 
-            var page = (Page)Activator.CreateInstance(item.TargetType);
+            var page = (ContentPage) Activator.CreateInstance(item.TargetType);
             page.Title = item.Title;
 
             Detail = new NavigationPage(page);

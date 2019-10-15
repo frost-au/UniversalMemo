@@ -4,9 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="UniversalMemo.Views.FolderPage"
+             x:Class="UniversalMemo.Views.Page.FolderPage"
              Title="{Binding Title}"
-             x:Name="Browse Folders Page">
+             x:Name="BrowseFoldersPage">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddFolder_Clicked" />

@@ -109,7 +109,6 @@ namespace UniversalMemo.Models
             }
         }
 
-
         public static List<Item> GetItemByFolderID(Guid Key)
         {
             var db = new SQLiteConnection(Path);
@@ -126,6 +125,16 @@ namespace UniversalMemo.Models
             TableMapping Mapping = db.GetMapping<Item>();
             String Query = String.Format("SELECT * FROM {0} WHERE key ={1}", Mapping.TableName, Key.ToString());
             Item Results = db.Query<Item>(Query)[0];
+
+            return Results;
+        }
+
+        public static Folder GetFolderByID(Guid Key)
+        {
+            var db = new SQLiteConnection(Path);
+            TableMapping Mapping = db.GetMapping<Folder>();
+            String Query = String.Format("SELECT * FROM {0} WHERE key ={1}", Mapping.TableName, Key.ToString());
+            Folder Results = db.Query<Folder>(Query)[0];
 
             return Results;
         }

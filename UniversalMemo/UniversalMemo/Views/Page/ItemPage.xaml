@@ -14,9 +14,33 @@
                 <Label HorizontalOptions="CenterAndExpand">Universal Memo</Label>
                 <Label HorizontalOptions="CenterAndExpand">Memo Item List</Label>
             </Grid>
-            <FlexLayout>
-                
-            </FlexLayout>
+            <Grid Padding="20, 20, 0, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="200" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+             
+                <Label Text="Name:" FontSize="Medium" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="{Binding Item.Name}" d:Text="Item name" FontSize="Small" Grid.Row="0" Grid.Column="1"/>
+
+                <Label Text="Belongs to:" FontSize="Medium" Grid.Row="1" Grid.Column="0"/>
+                <Label Text="{Binding Item.BelongsTo}" d:Text="Item Belongs To" FontSize="Small" Grid.Row="1" Grid.Column="1" />
+
+                <Label Text="Description:" FontSize="Medium" Grid.Row="2" Grid.Column="0"/>
+                <Label Text="{Binding Item.Date}" d:Text="Added Date" FontSize="Small" Grid.Row="2" Grid.Column="1"/>
+
+                <Label Text="Text:" FontSize="Medium" Grid.Row="3" Grid.Column="0" />
+                <Label Text="{Binding Item.Descripion}" d:Text="Item Description" FontSize="Small" Grid.Row="3" Grid.Column="1"/>
+
+                <Label Text="Body:" FontSize="Medium" Grid.Row="4" Grid.Column="0"/>
+                <Label Text="{Binding Item.Body}" d:Text="Body" FontSize="Small" Grid.Row="4" Grid.Column="1"/>
+
+            </Grid>
         </StackLayout>
   </ContentView.Content>
 </ContentView>

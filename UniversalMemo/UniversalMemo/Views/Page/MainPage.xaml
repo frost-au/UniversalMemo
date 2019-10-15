@@ -6,7 +6,6 @@
             mc:Ignorable="d"
             xmlns:views="clr-namespace:UniversalMemo.Views"
             x:Class="UniversalMemo.Views.MainPage">
-
     <MasterDetailPage.Master>
         <views:MenuPage />
     </MasterDetailPage.Master>
@@ -19,7 +18,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:ItemsPage />
+              <views:MainPage />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

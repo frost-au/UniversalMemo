@@ -11,6 +11,7 @@ namespace UniversalMemo.Views
     public partial class FolderPage : ContentPage
     {
         FolderViewModel viewModel;
+        ListView FoldersListView;
         public FolderPage()
         {
             base.OnAppearing();
@@ -34,13 +35,14 @@ namespace UniversalMemo.Views
             {
                 CurrentFolders = DataEngine.Folders;
             }
+            FoldersListView = new ListView();
             AddCellData(CurrentFolders);
         }
 
         public void AddCellData(List<Folder> Folders)
         {
 
-            FoldersListView.ItemTemplate = new DataTemplate(() =>
+            this.FoldersListView.ItemTemplate = new DataTemplate(() =>
             {
                 var textCell = new TextCell();
                 textCell.SetBinding(TextCell.TextProperty, "Text");
@@ -63,7 +65,7 @@ namespace UniversalMemo.Views
             Application.Current.MainPage = new ItemsPage(FolderKey.BelongsTo);
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
+        async void AddFolder_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new NewFolderPage()));
         }
